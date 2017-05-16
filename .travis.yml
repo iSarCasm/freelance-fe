@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "6.9"
+  - "6.10.3"
 
 before_install:
  - export CHROME_BIN=/usr/bin/google-chrome
@@ -12,18 +12,3 @@ before_install:
  - sudo apt-get install -y libappindicator1 fonts-liberation
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
-
-branches:
-  only:
-    - master
-
-before_script:
-  - npm install -g @angular/cli
-
-script:
-  - ng build --prod
-
-notifications:
-  email:
-    on_failure: change
-    on_success: change
