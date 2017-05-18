@@ -12,7 +12,6 @@ import { DocumentService } from './document.service';
 export class DocumentsComponent implements OnInit {
   documents: Document[];
   errorMessage: string;
-  mode = "Observable";
 
   constructor(
     private documentService: DocumentService
