@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Proposal } from './proposal';
 import { ProposalService } from './proposal.service';
@@ -14,7 +15,8 @@ export class ProposalListComponent {
   errorMessage: string;
 
   constructor(
-    private proposalService: ProposalService
+    private proposalService: ProposalService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -28,5 +30,10 @@ export class ProposalListComponent {
           proposals => this.proposals = proposals,
           error => this.errorMessage = <any>error
         )
+  }
+
+  goToShow(proposal: Proposal): void {
+    let link = ['/proposal', proposal.id];
+    this.router.navigate(link);
   }
 }

@@ -3,7 +3,7 @@
     <a class="list-group-item list-group-item-action active">
       <h1>Proposal List</h1>
     </a>
-    <a routerLink="/proposal/{{proposal.id}}" *ngFor="let proposal of proposals" class="list-group-item list-group-item-action">
+    <a (click)="goToShow(proposal)" *ngFor="let proposal of proposals" class="list-group-item list-group-item-action">
       <span>
         <h5 class="list-group-item-heading">{{proposal.customer}}</h5>
         <p class="list-group-item-text">
